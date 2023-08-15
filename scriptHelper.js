@@ -40,6 +40,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     alert('Please do not enter numbers in name slots');
 } 
 else {
+    const pilotStatus = document.getElementById("pilotStatus");
+    const copilotStatus = document.getElementById("copilotStatus");
+    const launchStatus = document.getElementById("launchStatus");
+    const cargoStatus = document.getElementById("cargoStatus");
+    const fuelStatus = document.getElementById("fuelStatus");
+
 pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
 copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
 list.style.visibility = 'hidden';
@@ -48,18 +54,18 @@ if (Number(fuelLevel) < 10000) {
     fuelStatus.innerHTML = `Not enough fuel for journey`;
     list.style.visibility = 'visible';
     launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
+    launchStatus.style.color = `#C7254E`;
 } else if (Number(cargoLevel) > 10000) {
     cargoStatus.innerHTML = `Too much mass for takeoff`;
     list.style.visibility = `visible`;
     launchStatus.innerHTML = `Shuttle not ready for launch`;
-    launchStatus.style.color = `red`;
+    launchStatus.style.color = "#C7254E";
 } else if (Number(cargoLevel) < 10000 && Number(fuelLevel) > 10000) {
     list.style.visibility = `visible`;
     fuelStatus.innerHTML = `Enough fuel for journey`;
     cargoStatus.innerHTML = `Mass cleared for takeoff`;
     launchStatus.innerHTML = `Shuttle ready for launch`;
-    launchStatus.style.color = `green`;
+    launchStatus.style.color = `#419F6A`;
 }
 }
 
