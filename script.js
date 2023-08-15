@@ -13,9 +13,10 @@ window.addEventListener("load", function() {
         const list = document.getElementById("faultyItems");
 
         formSubmission(document,list,pilot,copilot,fuelLevel,cargoMass);
+        event.preventDefault();
     });
 
-this.event.preventDefault();
+
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
